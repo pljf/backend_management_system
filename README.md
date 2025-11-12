@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# 🧭 General Back-end Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple yet functional **React Dashboard** built with **React, Ant Design, and Mock.js**.  
+This project simulates a real management system with login authentication, data visualization, and CRUD user management.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+### 🔐 Authentication
+- **Login / Logout** functionality (with mock backend verification)
+- Simulated role-based menu loading via `mockServeData/permission.js`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🏠 Home Dashboard
+- Displays user profile (avatar, name, role, last login info)
+- Data visualization using Echarts:
+  - Line chart of daily order data  
+  - Bar and pie charts for sales statistics  
+- Realtime mock data from `mockServeData/home.js`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👥 User Management
+- View a paginated table of users  
+- Add / Edit / Delete user records  
+- Search users by name (case-insensitive)
+- Built with Ant Design `Table`, `Form`, and `Modal` components
 
-### `npm test`
+### 📂 Sidebar Navigation
+- Dynamic menu loading
+- Includes pages:  
+  - `Home`
+  - `Mall`
+  - `User`
+  - `Other` (with subpages)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧩 Component Design
+- **CommonHeader**: top bar with dropdown menu (profile / logout)  
+- **CommonAside**: sidebar menu (collapsible)  
+- **CommonTag**: navigation tag bar (breadcrumb-like tab system)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧱 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+src/
+├── api/ # Mock API and Axios wrapper
+│ ├── mockServeData/
+│ │ ├── permission.js # Mock menu data by role
+│ │ ├── user.js # Mock user CRUD
+│ │ ├── home.js # Mock dashboard data
+│ ├── axios.js # Axios setup
+│ ├── index.js # API export
+│ ├── mock.js # Mock.js global setup
+│
+├── assets/ # Static images
+│ └── image/
+│ ├── 0.jpg
+│ └── 1.jpg
+│
+├── components/ # Reusable UI components
+│ ├── commonAside/
+│ ├── commonHeader/
+│ ├── commonTag/
+│ ├── Echarts/
+│
+├── config/ # Menu config
+├── pages/ # App pages
+│ ├── home/
+│ ├── login/
+│ ├── mall/
+│ ├── user/
+│ ├── other/
+│
+├── router/ # Router and auth guard
+│ ├── index.js
+│ ├── routerAuth.js
+│
+├── store/ # Redux Toolkit store
+│ ├── reducers/
+│ │ ├── tab.js
+│ │ ├── index.js
+│
+├── App.js # Root component
+├── main.js # App entry point
+└── ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Tech Stack
 
-### `npm run eject`
+| Category | Technology |
+|-----------|-------------|
+| Frontend Framework | React (Hooks) |
+| UI Library | Ant Design |
+| State Management | Redux Toolkit |
+| Data Simulation | Mock.js |
+| Charting | Echarts |
+| Routing | React Router DOM |
+| Language | JavaScript (ES6+) |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 💻 Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1️⃣ Install Dependencies
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2️⃣ Run the App
+npm start
 
-## Learn More
+### 3️⃣ Login Credentials
+Username: Patrick
+Password: Patrick
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💡 Usage
 
-### Code Splitting
+1. Open the browser and visit http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Log in using the demo credentials
 
-### Analyzing the Bundle Size
+3. Navigate through:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Home Page: View charts, statistics, and user profile
 
-### Making a Progressive Web App
+- User Page: Manage users (Add / Edit / Delete)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Other Pages: Placeholder demo for system expansion
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Log out via the profile dropdown menu on the header
