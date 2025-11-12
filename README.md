@@ -41,7 +41,6 @@ This project simulates a real management system with login authentication, data 
 
 ## 🧱 Project Structure
 
-src/
 ├── api/ # Mock API and Axios wrapper
 │ ├── mockServeData/
 │ │ ├── permission.js # Mock menu data by role
